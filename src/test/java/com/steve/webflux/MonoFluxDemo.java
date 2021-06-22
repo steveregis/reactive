@@ -8,8 +8,10 @@ public class MonoFluxDemo {
 @Test
     public void monoDemo(){
 
-       Mono<Object> singleResponse = Mono.just("Hey here it is Iam a reactive response")
-               .then(Mono.error(new RuntimeException("something is wrong")))
+    Mono<String> singleResponse = Mono.just("Hey here it is Iam a reactive response")
+
+            // Mono<Object> singleResponse = Mono.just("Hey here it is Iam a reactive response")
+      //         .then(Mono.error(new RuntimeException("something is wrong")))
                .log();
 
         singleResponse.subscribe(System.out::println);
